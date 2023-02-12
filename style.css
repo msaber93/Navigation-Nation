@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+:root {
+  --primaryColor: #fff;
+  --navColor1: #21292c;
+  --navColor2: #08a200;
+  --navColor3: #ae78c4;
+  --navColor4: #d84c76;
+  --navColor5: #6e6ea4;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: #000;
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: 10;
+    display: inline;
+    cursor: pointer;
+  }
+  
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: rotate(-45deg) translate(-7px, 8px);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: rotate(45deg) translate(-6px, -8px);
+  }
+/* Home Section */
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primaryColor);
+}
+section#home {
+  background-image: url(https://wallpapers.com/images/featured/a5u9zq0a0ymy2dug.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+section#home a {
+  text-decoration: none;
+  color: var(--primaryColor);
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-bottom: 2px solid var(--primaryColor);
+}
+section#about {
+  background-color: var(--navColor2);
+}
+section#skills {
+  background-color: var(--navColor3);
+}
+section#projects {
+  background-color: var(--navColor4);
+}
+section#contact {
+  background-color: var(--navColor5);
+}
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+  section {
+    font-size: 15px;
+  }
+  section#home a {
+    top: 1rem;
+    left: 1rem;
+  }
+  section#home a {
+    font-size: 15px;
+  }
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}
